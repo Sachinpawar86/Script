@@ -1,4 +1,4 @@
-<h1 align="center"> Android 14 Scripts </h1>
+<h1 align="center"> 😎 Android 14 Scripts 😋 </h1>
 
 # Evolution-X Command:
 ```
