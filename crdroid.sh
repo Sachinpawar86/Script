@@ -76,7 +76,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-#lunch lineage_mojito-user || lunch lineage_mojito-ap2a-user || lunch lineage_mojito-ap3a-user
+lunch lineage_mojito-user || lunch lineage_mojito-ap2a-user || lunch lineage_mojito-ap3a-user
 #echo "============="
 
 
