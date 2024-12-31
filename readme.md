@@ -4,3 +4,7 @@
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/evox.sh | bash"
 ```
+# Crdroid Command:
+```
+https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/crdroid.sh
+```
