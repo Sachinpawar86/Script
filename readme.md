@@ -6,5 +6,5 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Sc
 ```
 # Crdroid Command:
 ```
-https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/crdroid.sh
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/crdroid.sh | bash"
 ```
