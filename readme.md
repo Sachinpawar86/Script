@@ -4,3 +4,7 @@
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/14/evox.sh | bash"
 ```
+# DerpFest Command:
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/14/derp.sh | bash"
+```
