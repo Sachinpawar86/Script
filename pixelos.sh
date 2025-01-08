@@ -10,6 +10,7 @@ echo "=================="
 
 # Clone local_manifests repository
 git clone -b PixelOS-15 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+git clone https://gitlab.com/romgharti/android_vendor_xiaomi_mojito-leicacamera -b bliss vendor/xiaomi/mojito-leicacamera
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
