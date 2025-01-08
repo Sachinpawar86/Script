@@ -1,6 +1,8 @@
 #!/bin/bash
 
 rm -rf .repo/local_manifests/
+rm -rf vendor/xiaomi/mojito-leicacamera
+rm -rf android/vendor/xiaomi/mojito-leicacamera
 
 # Rom source repo
 repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fifteen-qpr1 --git-lfs
@@ -10,7 +12,7 @@ echo "=================="
 
 # Clone local_manifests repository
 git clone -b PixelOS-15 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
-git clone https://gitlab.com/romgharti/android_vendor_xiaomi_mojito-leicacamera -b bliss vendor/xiaomi/mojito-leicacamera
+git clone https://gitlab.com/ItzDFPlayer/vendor_xiaomi_miuicamera -b leica-5.0 vendor/xiaomi/miuicamera
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
