@@ -3,7 +3,7 @@
 rm -rf .repo/local_manifests/
 
 # Rom source repo
-repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14-pixel
+repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13
 echo "=================="
 echo "Repo init success"
 echo "=================="
