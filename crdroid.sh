@@ -14,6 +14,10 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Custom Source
+wget https://raw.githubusercontent.com/custom-crdroid/custom_cr_setup/refs/heads/15.0/vendorsetup.sh
+bash vendorsetup.sh
+
 # Sync
 /opt/crave/resync.sh
 echo "============="
