@@ -21,7 +21,6 @@ echo "============================"
 # Export
 export BUILD_USERNAME=Sachin
 export BUILD_HOSTNAME=crave
-export TZ="Asia/India"
 echo "======= Export Done ======"
 
 # Set up build environment
