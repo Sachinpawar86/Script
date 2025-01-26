@@ -12,3 +12,7 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Sc
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/pixelos.sh | bash"
 ```
+# MistOS Command:
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/mistos.sh | bash"
+```
