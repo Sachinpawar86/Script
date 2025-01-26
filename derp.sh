@@ -2,8 +2,12 @@
 
 rm -rf .repo/local_manifests/
 
+# Local TimeZone
+sudo rm -rf /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/India /etc/localtime
+
 # Rom source repo
-repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13
+repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14-pixel
 echo "=================="
 echo "Repo init success"
 echo "=================="
