@@ -18,6 +18,12 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Leica Fix
+cd frameworks/native
+curl -s https://github.com/ProjectInfinity-X/frameworks_native/commit/ac92117c735ac28bf9d216b09c60a5b930786011.patch | git am
+curl -s https://github.com/ProjectInfinity-X/frameworks_native/commit/756ffb40bea544e5d381d8adc47e15c01be728cc.patch | git am
+cd ../..
+
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
