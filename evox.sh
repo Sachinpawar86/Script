@@ -18,6 +18,9 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Leica Cam
+git clone --depth=1 https://gitlab.com/pnplusplus/android_vendor_xiaomi_mojito-leicacamera vendor/xiaomi/mojito-leicacamera
+
 # Leica Fix
 cd frameworks/native
 curl -s https://github.com/ProjectInfinity-X/frameworks_native/commit/ac92117c735ac28bf9d216b09c60a5b930786011.patch | git am
