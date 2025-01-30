@@ -8,11 +8,11 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Sc
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/crdroid.sh | bash"
 ```
-# Pixel-OS Command:
+# PixelOS Command:
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/pixelos.sh | bash"
 ```
-# Mist-OS Command:
+# MistOS Command:
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/mistos.sh | bash"
 ```
