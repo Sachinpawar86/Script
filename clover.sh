@@ -18,6 +18,9 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Lfs
+cd vendor/gms && git lfs install && git lfs pull
+
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
