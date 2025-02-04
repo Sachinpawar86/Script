@@ -42,6 +42,6 @@ echo "====== Envsetup Done ======="
 
 # Lunch
 . build/envsetup.sh
-mistify mojito userdebug
+mistify mojito eng
 mist b
 breakfast mojito
