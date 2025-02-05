@@ -24,13 +24,6 @@ echo "============="
 echo "Sync success"
 echo "============="
 
-# keys
-# mkdir vendor/lineage-priv
-# cp build-keys/* vendor/lineage-priv
-# echo "============="
-# echo "Keys copied"
-# echo "============="
-
 # Export
 export BUILD_USERNAME=Sachin
 export BUILD_HOSTNAME=crave
