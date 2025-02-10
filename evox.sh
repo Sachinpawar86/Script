@@ -18,9 +18,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Leica Camera
-git clone https://gitlab.com/sachinbarange86/android_vendor_xiaomi_mojito-leicacamera.git -b main vendor/xiaomi/mojito-leicacamera
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
