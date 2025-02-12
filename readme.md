@@ -20,3 +20,7 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Sc
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/clover.sh | bash"
 ```
+# BlackIron Command:
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/blackiron.sh | bash"
+```
