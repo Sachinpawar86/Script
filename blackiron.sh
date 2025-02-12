@@ -18,9 +18,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Signed Build
-crave ssh && git clone https://github.com/Black-Iron-Project/vendor_blackiron-priv_keys-template vendor/blackiron-priv/keys && cd vendor/blackiron-priv/keys && ./generate.sh && exit
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
