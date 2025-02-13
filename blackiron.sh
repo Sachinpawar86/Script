@@ -32,7 +32,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-blkilunch mojito user
+blkilunch mojito userdebug
 echo "============="
 
 # Make cleaninstall
