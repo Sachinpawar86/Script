@@ -31,10 +31,11 @@ echo "======= Export Done ======"
 
 # Set up build environment
 source build/envsetup.sh
+. build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-. build/envsetup.sh
 mistify mojito eng
+
+# Build rom
 mist b
-breakfast mojito
