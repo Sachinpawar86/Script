@@ -18,12 +18,8 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Vendor_Voltage-Priv_Keys
-git clone https://github.com/VoltageOS/vendor_voltage-priv_keys vendor/voltage-priv/keys
-cd vendor/voltage-priv/keys
-./keys.sh
-cd ../../../
-echo "======= vendor voltage priv keys ======"
+# Keys
+crave ssh &&  git clone https://github.com/VoltageOS/vendor_voltage-priv_keys vendor/voltage-priv/keys && cd vendor/voltage-priv/keys && ./keys.sh && exit
 
 # Sync the repositories
 /opt/crave/resync.sh
