@@ -7,7 +7,7 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/India /etc/localtime
 
 # Rom source repo
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
