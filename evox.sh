@@ -32,7 +32,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch lineage_mojito-ap4a-userdebug
+lunch lineage_mojito-ap4a-eng
 echo "============="
 
 # Make cleaninstall
