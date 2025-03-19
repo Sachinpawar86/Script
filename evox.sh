@@ -18,6 +18,10 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Clone Gapps
+rm -rf vendor/gapps
+git clone https://gitlab.com/sachinbarange86/vendor_gapps.git --depth 1 -b vic vendor/gapps
+
 # Signed Keys
 crave ssh && git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && cd vendor/evolution-priv/keys && ./keys.sh && exit
 
