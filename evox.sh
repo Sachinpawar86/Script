@@ -19,6 +19,7 @@ echo "Local manifest clone success"
 echo "============================"
 
 # Clone Gapps
+rm -rf vendor/gms
 rm -rf vendor/gapps
 git clone https://gitlab.com/sachinbarange86/vendor_gapps.git --depth 1 -b vic vendor/gapps
 
