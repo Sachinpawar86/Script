@@ -7,7 +7,7 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/India /etc/localtime
 
 # Rom source repo
-repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
@@ -17,14 +17,6 @@ git clone -b Evo-15 https://github.com/Sachinpawar86/local_manifests .repo/local
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
-
-# Signed Keys
-crave ssh && git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && cd vendor/evolution-priv/keys && ./keys.sh && exit
-
-# Clone Gapps
-rm -rf vendor/gms
-rm -rf vendor/gapps
-git clone https://gitlab.com/sachinbarange86/vendor_gapps_axion.git -b vic vendor/gapps
 
 # Sync the repositories
 /opt/crave/resync.sh
@@ -40,7 +32,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch lineage_mojito-ap4a-user
+lunch lineage_mojito-bp1a-user
 echo "============="
 
 # Make cleaninstall
