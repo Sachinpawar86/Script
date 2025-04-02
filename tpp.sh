@@ -32,7 +32,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch aosp_mojito-userdebug
+lunch aosp_mojito-user
 echo "============="
 
 # Make cleaninstall
