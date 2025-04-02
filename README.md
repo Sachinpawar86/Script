@@ -4,11 +4,3 @@
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/evox.sh | bash"
 ```
-# DerpFest Command:
-```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/derp.sh | bash"
-```
-# Clover Command:
-```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/clover.sh | bash"
-```
