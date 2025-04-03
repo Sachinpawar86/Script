@@ -32,7 +32,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-aosp_mojito-bp1a-userdebug
+breakfast mojito
 echo "============="
 
 # Make cleaninstall
