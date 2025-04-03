@@ -18,9 +18,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Clone
-git clone https://github.com/Sachinpawar86/android_packages_apps_Aperture.git -b lineage-22.1 packages/apps/Aperture
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
