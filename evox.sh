@@ -13,10 +13,13 @@ echo "Repo init success"
 echo "=================="
 
 # Clone local_manifests repository
-git clone -b Evo-15 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+git clone -b Evo-15-QPR2 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
+
+# Signed Keys
+crave ssh && git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && cd vendor/evolution-priv/keys && ./keys.sh && exit
 
 # Sync the repositories
 /opt/crave/resync.sh
@@ -32,7 +35,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch lineage_mojito-bp1a-user
+lunch lineage_mojito-bp1a-userdebug
 echo "============="
 
 # Make cleaninstall
