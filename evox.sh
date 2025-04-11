@@ -35,7 +35,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch lineage_mojito-bp1a-userdebug
+lunch lineage_mojito-bp1a-user
 echo "============="
 
 # Make cleaninstall
