@@ -4,3 +4,7 @@
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/evox.sh | bash"
 ```
+# LOS
+```
+curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/15/los.sh | bash
+```
