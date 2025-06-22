@@ -1,4 +1,4 @@
-<h1 align="center"> 😎 Android 15-QPR2 Scripts 🤠 </h1>
+<h1 align="center"> 😎 Android 16 Scripts 🤠 </h1>
 
 # Evolution-X Command:
 ```
