@@ -19,7 +19,7 @@ echo "Local manifest clone success"
 echo "============================"
 
 # Signed Keys
-crave ssh && git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template.git && cd vendor/evolution-priv/keys && ./keys.sh && exit
+crave ssh && git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && cd vendor/evolution-priv/keys && ./keys.sh && exit
 
 # Sync the repositories
 /opt/crave/resync.sh
