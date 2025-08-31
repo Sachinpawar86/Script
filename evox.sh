@@ -40,8 +40,8 @@ echo "======= Export Done ======"
 source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
-# Lunch (check correct target name, example below)
-lunch evolution_mojito-user
+# Lunch
+lunch lineage_mojito-bp2a-user
 echo "============="
 
 # Make clean install
