@@ -24,8 +24,8 @@ echo "============================"
 echo "============================"
 
 # Export
-export BUILD_USERNAME="Sachin"
-export BUILD_HOSTNAME="crave"
+export BUILD_USERNAME=Sachin
+export BUILD_HOSTNAME=crave
 export TARGET_USE_MIUI_GALLERY=true
 echo "======= Export Done ======"
 
