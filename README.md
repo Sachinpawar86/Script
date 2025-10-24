@@ -2,7 +2,7 @@
 
 # Axion-OS Command:
 ```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16/evox.sh | bash"
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16/axion.sh | bash"
 ```
 
 # Evolution-X Command:
