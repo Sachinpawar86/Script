@@ -14,7 +14,7 @@ echo "Repo init success"
 echo "=================="
 
 # Clone local_manifests repository
-git clone -b AxionOS https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+git clone -b Axion-16 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
@@ -33,7 +33,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-axion mojito user gms core
+axion mojito user gms pico
 echo "============="
 
 # Make clean install
