@@ -32,6 +32,9 @@ echo "======= Export Done ======"
 source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
+# Keys
+gk -s
+
 # Lunch
 axion mojito user gms pico
 echo "============="
