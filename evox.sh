@@ -24,8 +24,8 @@ echo "============================"
 echo "============================"
 
 # Export
-export BUILD_USERNAME="Sachin"
-export BUILD_HOSTNAME="crave"
+export BUILD_USERNAME=Sachin
+export BUILD_HOSTNAME=crave
 echo "======= Export Done ======"
 
 # Set up build environment
