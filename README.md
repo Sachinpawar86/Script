@@ -4,6 +4,7 @@
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16/evox.sh | bash"
 ```
+
 # Axion-OS Command:
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16/axion.sh | bash"
