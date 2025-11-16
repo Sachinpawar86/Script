@@ -34,6 +34,10 @@ echo "============================"
 rm -rf build/soong
 git clone https://github.com/Sachinpawar86/build_soong.git build/soong
 
+# Custom Bionic
+rm -rf bionic
+git clone https://github.com/Sachinpawar86/bionic.git -b alpha-16.1 bionic
+
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
