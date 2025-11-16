@@ -30,6 +30,10 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Custom Soong
+rm -rf build/soong
+git clone https://github.com/Sachinpawar86/build_soong.git build/soong
+
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
