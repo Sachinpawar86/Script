@@ -1,11 +1,6 @@
-<h1 align="center"> 😝 Android 16 Scripts 😉 </h1>
+<h1 align="center"> 🥰 Android 16-QPR1 Scripts 😲 </h1>
 
 # Evolution-X Command:
 ```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16/evox.sh | bash"
-```
-
-# Axion-OS Command:
-```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16/axion.sh | bash"
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16-QPR1/evox.sh | bash"
 ```
