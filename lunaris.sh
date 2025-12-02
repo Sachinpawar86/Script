@@ -30,6 +30,10 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# GMS
+rm -rf vendor/gms
+git clone https://codeberg.org/Sachinpawar/vendor_gms.git -b 16 vendor/gms
+
 # Camera
 git clone https://gitea.com/goziko32/vendor_gcam.git vendor/mgc
 
