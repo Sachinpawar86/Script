@@ -30,9 +30,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Camera
-git clone https://gitea.com/goziko32/vendor_gcam.git vendor/mgc
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
