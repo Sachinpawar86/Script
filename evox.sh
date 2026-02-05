@@ -13,6 +13,10 @@ echo "=================="
 echo "Repo init success"
 echo "=================="
 
+# Custom Updater
+rm -rf packages/apps/Updater
+git clone https://github.com/Sachinpawar86/packages_apps_Updater.git packages/apps/Updater
+
 # Clone local_manifests repository
 git clone -b Evo-16-QPR1 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
 echo "============================"
