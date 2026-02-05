@@ -8,7 +8,7 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 # ROM source repo
-repo init -u https://github.com/Evolution-X/manifest -b bq1 --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
@@ -33,7 +33,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch lineage_mojito-bp3a-userdebug
+lunch lineage_mojito-bp3a-user
 echo "============="
 
 # Make clean install
