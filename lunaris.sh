@@ -30,6 +30,13 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
+# Camera
+rm -rf device/xiaomi/miuicamera-onyx
+git clone https://github.com/Sachinpawar86/device_xiaomi_miuicamera-onyx.git device/xiaomi/miuicamera-onyx
+
+rm -rf vendor/xiaomi/miuicamera-onyx
+git clone https://github.com/Sachinpawar86/vendor_xiaomi_miuicamera-onyx.git vendor/xiaomi/miuicamera-onyx
+
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
