@@ -19,7 +19,7 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 # ROM source repo
-repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs
+repo init -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
@@ -29,13 +29,6 @@ git clone -b Lunaris-16 https://github.com/Sachinpawar86/local_manifests .repo/l
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
-
-# Camera
-rm -rf device/xiaomi/miuicamera-onyx
-git clone https://github.com/Sachinpawar86/device_xiaomi_miuicamera-onyx.git device/xiaomi/miuicamera-onyx
-
-rm -rf vendor/xiaomi/miuicamera-onyx
-git clone https://github.com/Sachinpawar86/vendor_xiaomi_miuicamera-onyx.git vendor/xiaomi/miuicamera-onyx
 
 # Sync the repositories
 /opt/crave/resync.sh
@@ -51,7 +44,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-lunch lineage_onyx-bp2a-user
+lunch lineage_onyx-bp4a-user
 echo "============="
 
 # Make clean install
@@ -59,5 +52,5 @@ make installclean
 echo "============="
 
 # Build ROM
-m lunaris
+m bacon
 echo "============="
