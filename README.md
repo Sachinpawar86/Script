@@ -4,3 +4,8 @@
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16-QPR1/evox.sh | bash"
 ```
+
+# Lunaris Command:
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16-QPR1/lunaris.sh | bash"
+```
