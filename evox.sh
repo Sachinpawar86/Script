@@ -1,48 +1,146 @@
 #!/bin/bash
+set -e
 
-# Remove old local_manifests
-rm -rf .repo/local_manifests/
+# ==============================
+# PixelDrain API KEY
+# ==============================
+PIXELDRAIN_KEY="3a3a801f-99c6-4136-8be1-0dbf0a37ded9"
 
-# Local TimeZone
+echo "=================================="
+echo "Cleaning old trees & manifests"
+echo "=================================="
+
+rm -rf device/xiaomi/mojito
+rm -rf device/xiaomi/sm6150-common
+rm -rf vendor/xiaomi/mojito
+rm -rf vendor/xiaomi/sm6150-common
+rm -rf kernel/xiaomi/mojito
+rm -rf hardware/xiaomi
+rm -rf packages/apps/ViPER4AndroidFX
+rm -rf .repo/local_manifests
+
+echo "=================================="
+echo "Setting timezone"
+echo "=================================="
+
 sudo rm -rf /etc/localtime
-sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+sudo ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
-# ROM source repo
-repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs
-echo "=================="
+echo "=================================="
+echo "Initializing Evolution-X Source"
+echo "=================================="
+
+repo init -u https://github.com/Evolution-X/manifest -b bq2 --git-lfs
 echo "Repo init success"
-echo "=================="
 
-# Custom Updater
-rm -rf packages/apps/Updater
-git clone https://github.com/Sachinpawar86/packages_apps_Updater.git packages/apps/Updater
+echo "=================================="
+echo "Cloning local_manifests"
+echo "=================================="
 
-# Clone local_manifests repository
-git clone -b Evo-16-QPR1 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
-echo "============================"
-echo "Local manifest clone success"
-echo "============================"
+git clone -b Evo-16-QPR2 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
 
-# Sync the repositories
+echo "=================================="
+echo "Syncing source"
+echo "=================================="
+
 /opt/crave/resync.sh
-echo "============================"
 
-# Export
-export BUILD_USERNAME=Sachin
-export BUILD_HOSTNAME=crave
-echo "======= Export Done ======"
 
-# Set up build environment
+# ==============================
+# VANILLA BUILD
+# ==============================
+echo "=================================="
+echo "Starting VANILLA build"
+echo "=================================="
+
 source build/envsetup.sh
-echo "====== Envsetup Done ======="
+export WITH_GMS=false
+lunch lineage_mojito-bp4a-userdebug
 
-# Lunch
-lunch lineage_mojito-bp3a-eng
-echo "============="
-
-# Make clean install
 make installclean
-echo "============="
-
-# Build ROM
 m evolution
+
+# Find Vanilla ZIP
+cd out/target/product/mojito
+
+VANILLA_ZIP=$(find . -maxdepth 1 -type f -name "*mojito*.zip" -size +500M | head -n 1)
+
+if [[ -z "$VANILLA_ZIP" ]]; then
+    echo "❌ ERROR: ROM ZIP not found for vanilla build!"
+    exit 1
+fi
+
+# Copy to safe folder
+mkdir -p ../vanilla
+cp "$VANILLA_ZIP" ../vanilla/
+
+cd ../../../../
+
+
+# ==============================
+# GAPPS BUILD
+# ==============================
+echo "=================================="
+echo "Starting GAPPS build"
+echo "=================================="
+
+source build/envsetup.sh
+export TARGET_USES_PICO_GAPPS=true
+lunch lineage_mojito-bp4a-userdebug
+
+make installclean
+m evolution
+
+# Find GApps ZIP  
+cd out/target/product/mojito
+
+GAPPS_ZIP=$(find . -maxdepth 1 -type f -name "*mojito*.zip" -size +500M | head -n 1)
+
+if [[ -z "$GAPPS_ZIP" ]]; then
+    echo "❌ ERROR: ROM ZIP not found for gapps build!"
+    exit 1
+fi
+
+mkdir -p ../gapps
+cp "$GAPPS_ZIP" ../gapps/
+
+cd ../../../../
+
+
+# ==============================
+# UPLOAD VANILLA TO PIXELDRAIN
+# ==============================
+echo "=================================="
+echo "Uploading VANILLA build to PixelDrain"
+echo "=================================="
+
+cd out/target/product/vanilla
+VANILLA_ROM=$(ls *.zip | head -n 1)
+
+curl -T "$VANILLA_ROM" \
+    -u :$PIXELDRAIN_KEY \
+    https://pixeldrain.com/api/file/
+
+cd ../../..
+
+
+# ==============================
+# UPLOAD GAPPS TO PIXELDRAIN
+# ==============================
+echo "=================================="
+echo "Uploading GAPPS build to PixelDrain"
+echo "=================================="
+
+cd out/target/product/gapps
+GAPPS_ROM=$(ls *.zip | head -n 1)
+
+curl -T "$GAPPS_ROM" \
+    -u :$PIXELDRAIN_KEY \
+    https://pixeldrain.com/api/file/
+
+cd ../../..
+
+
+echo "=================================="
+echo "🎉 BUILD + UPLOAD COMPLETED SUCCESSFULLY!"
+echo "=================================="
