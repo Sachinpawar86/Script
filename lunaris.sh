@@ -8,8 +8,9 @@ rm -rf device/xiaomi/onyx-kernel
 # Remove Xiaomi hardware folder
 rm -rf hardware/xiaomi
 
-# Remove Xiaomi Dolby app
-rm -rf packages/apps/XiaomiDolby
+# Remove Dolby & GameBar
+rm -rf packages/apps/LunarisDolby
+rm -rf packages/apps/GameBar
 
 # Remove local manifests
 rm -rf .repo/local_manifests/
@@ -35,8 +36,7 @@ echo "============================"
 echo "============================"
 
 # Export
-export BUILD_USERNAME=Sachin
-export BUILD_HOSTNAME=crave
+export WITH_GMS=false
 echo "======= Export Done ======"
 
 # Set up build environment
