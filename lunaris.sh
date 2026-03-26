@@ -31,10 +31,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Camera
-git clone https://github.com/onyx-voltage/device_xiaomi_onyx-miuicamera.git device/xiaomi/onyx-miuicamera
-git clone https://github.com/onyx-voltage/vendor_xiaomi_onyx-miuicamera.git vendor/xiaomi/onyx-miuicamera
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
