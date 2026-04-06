@@ -7,7 +7,7 @@ rm -rf device/xiaomi/mojito
 rm -rf device/xiaomi/sm6150-common
 rm -rf vendor/xiaomi/mojito
 rm -rf vendor/xiaomi/sm6150-common
-rm -rf kernel/xiaomi/mojito
+rm -rf kernel/xiaomi/sm6150
 rm -rf hardware/xiaomi
 rm -rf packages/apps/ViPER4AndroidFX
 rm -rf vendor/xiaomi/mojito-leicacamera
