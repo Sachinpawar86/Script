@@ -2,6 +2,16 @@
 
 # Remove old local_manifests
 rm -rf .repo/local_manifests/
+rm -rf .repo/local_manifests
+rm -rf device/xiaomi/mojito
+rm -rf device/xiaomi/sm6150-common
+rm -rf vendor/xiaomi/mojito
+rm -rf vendor/xiaomi/sm6150-common
+rm -rf kernel/xiaomi/mojito
+rm -rf hardware/xiaomi
+rm -rf packages/apps/ViPER4AndroidFX
+rm -rf vendor/xiaomi/mojito-leicacamera
+rm -rf frameworks/native
 
 # Local TimeZone
 sudo rm -rf /etc/localtime
