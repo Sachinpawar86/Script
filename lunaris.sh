@@ -8,7 +8,7 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 # ROM source repo
-repo init -u https://github.com/Lunaris-AOSP/android -b test --git-lfs
+repo init -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
