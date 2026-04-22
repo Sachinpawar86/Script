@@ -8,7 +8,7 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 # ROM source repo
-repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.0 --git-lfs
+repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
@@ -36,7 +36,7 @@ echo "====== Envsetup Done ======="
 gk -s
 
 # Lunch
-axion mojito user gms pico
+axion mojito user va
 echo "============="
 
 # Make clean install
@@ -44,4 +44,4 @@ make installclean
 echo "============="
 
 # Build ROM
-ax -b user
+ax -br
