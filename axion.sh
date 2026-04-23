@@ -33,7 +33,7 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======="
 
 # Lunch
-axion mojito user va
+axion mojito user gms core
 echo "============="
 
 # Make clean install
