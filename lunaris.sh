@@ -31,14 +31,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-rm -rf device/xiaomi/miuicamera-onyx
-rm -rf vendor/xiaomi/miuicamera-onyx
-git clone https://github.com/Sachinpawar86/android_device_xiaomi_miuicamera-onyx.git device/xiaomi/miuicamera-onyx
-git clone https://gitlab.com/sachinbarange86/miuicamera-onyx.git vendor/xiaomi/miuicamera-onyx
-
-cd upto 8750
-curl -s https://github.com/K4LCHAKRA/android_device_qcom_sepolicy_vndr/commit/feba0f0a99b7416a8aca0537aa44df2d84c602e5.patch | git am
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
