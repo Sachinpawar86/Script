@@ -31,9 +31,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-cd frameworks/av
-curl -L https://gitlab.com/sachinbarange86/frameworks-av/-/commit/88c25f3c66d3ae68bb010963e75367e4b3e270c0.patch | git am
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
