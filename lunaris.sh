@@ -15,10 +15,6 @@ rm -rf packages/apps/GameBar
 # Remove local manifests
 rm -rf .repo/local_manifests/
 
-# Local TimeZone
-sudo rm -rf /etc/localtime
-sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-
 # ROM source repo
 repo init --depth=1 -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
 echo "=================="
