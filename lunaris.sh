@@ -2,13 +2,19 @@
 
 # Remove old local_manifests
 rm -rf .repo/local_manifests/
-
-# Local TimeZone
-sudo rm -rf /etc/localtime
-sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+rm -rf .repo/local_manifests
+rm -rf \
+device/xiaomi/mojito \
+device/xiaomi/sm6150-common \
+vendor/xiaomi/mojito \
+vendor/xiaomi/sm6150-common \
+vendor/xiaomi/mojito-leicacamera \
+kernel/xiaomi/mojito \
+hardware/xiaomi \
+packages/apps/ViPER4AndroidFX
 
 # ROM source repo
-repo init -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
+repo init --depth=1 -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
@@ -24,8 +30,7 @@ echo "============================"
 echo "============================"
 
 # Export
-export BUILD_USERNAME=Sachin
-export BUILD_HOSTNAME=crave
+export WITH_GMS=true
 echo "======= Export Done ======"
 
 # Set up build environment
@@ -34,10 +39,6 @@ echo "====== Envsetup Done ======="
 
 # Lunch
 lunch lineage_mojito-bp4a-user
-echo "============="
-
-# Make clean install
-make installclean
 echo "============="
 
 # Build ROM
