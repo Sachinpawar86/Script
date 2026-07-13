@@ -1,5 +1,5 @@
 
-repo init --depth=1 -u https://github.com/VoltageOS/manifest.git -b 16.2 --git-lfs
+repo init --depth=1 -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
 /opt/crave/resync.sh
 
 git clone https://github.com/onyx-voltage/android_device_xiaomi_onyx.git -b bliss-1 device/xiaomi/onyx
