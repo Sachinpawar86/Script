@@ -16,3 +16,7 @@ crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Sc
 ```
 crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16-QPR2/matrixx.sh | bash"
 ```
+# Crave
+```
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/16-QPR2/crave.sh | bash"
+```
