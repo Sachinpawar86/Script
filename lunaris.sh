@@ -21,6 +21,8 @@ echo "=================="
 
 # Clone local_manifests repository
 git clone -b Lunaris-mojito https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+rm -rf frameworks/native
+git clone -b 16.2 https://github.com/Sachinpawar86/frameworks_native.git frameworks/native
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
