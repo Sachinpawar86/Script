@@ -32,7 +32,7 @@ echo "============================"
 echo "============================"
 
 # Export
-export WITH_GMS=false
+export WITH_GMS=true
 echo "======= Export Done ======"
 
 # Set up build environment
@@ -42,8 +42,6 @@ echo "====== Envsetup Done ======="
 # Lunch
 lunch lineage_mojito-bp4a-user
 echo "============="
-
-make installclean
 
 # Build ROM
 m bacon
