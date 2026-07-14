@@ -32,7 +32,7 @@ echo "============================"
 echo "============================"
 
 # Export
-export WITH_GMS=true
+export WITH_GMS=false
 echo "======= Export Done ======"
 
 # Set up build environment
