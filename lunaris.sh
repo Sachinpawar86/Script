@@ -41,5 +41,9 @@ echo "====== Envsetup Done ======="
 lunch lineage_mojito-bp4a-user
 echo "============="
 
+# Make clean install
+make installclean
+echo "============="
+
 # Build ROM
 m bacon
