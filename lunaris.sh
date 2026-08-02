@@ -43,6 +43,10 @@ echo "====== Envsetup Done ======="
 lunch lineage_onyx-bp4a-user
 echo "============="
 
+# Make clean install
+make installclean
+echo "============="
+
 # Build ROM
 m bacon
 echo "============="
