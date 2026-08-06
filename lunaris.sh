@@ -32,10 +32,6 @@ echo "============================"
 echo "Local manifest clone success"
 echo "============================"
 
-# Bionic
-rm -rf bionic
-git clone https://github.com/Sachinpawar86/bionic.git -b 16.2 bionic
-
 # Sync the repositories
 /opt/crave/resync.sh
 echo "============================"
