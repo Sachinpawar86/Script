@@ -3,14 +3,19 @@
 # Remove Xiaomi device/vendor/kernel trees for onyx
 rm -rf device/xiaomi/onyx
 rm -rf vendor/xiaomi/onyx
-rm -rf device/xiaomi/onyx-kernel
+rm -rf kernel/xiaomi/sm8735
+rm -rf kernel/xiaomi/sm8735-modules
+rm -rf kernel/xiaomi/sm8735-devicetrees
 
 # Remove Xiaomi hardware folder
 rm -rf hardware/xiaomi
 
-# Remove Dolby & GameBar
+# Remove Dolby & GameBar & Camera
 rm -rf packages/apps/LunarisDolby
 rm -rf packages/apps/GameBar
+rm -rf packages/apps/NotGameTurbo
+rm -rf device/xiaomi/onyx-miuicamera
+rm -rf vendor/xiaomi/onyx-miuicamera
 
 # Remove local manifests
 rm -rf .repo/local_manifests/
@@ -22,7 +27,7 @@ echo "Repo init success"
 echo "=================="
 
 # Clone local_manifests repository
-git clone -b Lunaris-16 https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+git clone -b Lunaris-16-oss https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"

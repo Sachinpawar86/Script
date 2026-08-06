@@ -2,9 +2,5 @@
 
 # LunarisAOSP Command:
 ```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/ONYX-16/lunaris.sh | bash"
-```
-# Infinity-X Command:
-```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/ONYX-16/infinity.sh | bash"
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/oss/lunaris.sh | bash"
 ```
