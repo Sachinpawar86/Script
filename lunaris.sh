@@ -5,7 +5,7 @@
 
 #!/bin/bash
 
-set -Eeuo pipefail
+set -Ee -o pipefail
 
 # ============================================================
 # CONFIGURATION
