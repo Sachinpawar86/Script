@@ -1,163 +1,61 @@
-```bash
 #!/bin/bash
 
-ROM_NAME="Lunaris-AOSP"
-DEVICE="onyx"
-BRANCH="16.2"
-MANIFEST_BRANCH="Lunaris-16-oss"
-BUILD_TARGET="lineage_onyx-bp4a-user"
+# Remove Xiaomi device/vendor/kernel trees for onyx
+rm -rf device/xiaomi/onyx
+rm -rf vendor/xiaomi/onyx
+rm -rf kernel/xiaomi/sm8735
+rm -rf kernel/xiaomi/sm8735-modules
+rm -rf kernel/xiaomi/sm8735-devicetrees
 
-BIONIC_PATCH="https://github.com/sp-projectss/bionic/commit/8c732ec79000384e52de0efa656f50084f8403d.patch"
-UPLOAD_SCRIPT="https://raw.githubusercontent.com/K4LCHAKRA/telegram_notification_gofile_upload/refs/heads/main/gofile_tg_upload.sh"
+# Remove Xiaomi hardware folder
+rm -rf hardware/xiaomi
 
-JSON_FILE="onyx.json"
+# Remove Dolby & GameBar & Camera
+rm -rf packages/apps/LunarisDolby
+rm -rf packages/apps/GameBar
+rm -rf packages/apps/NotGameTurbo
+rm -rf device/xiaomi/onyx-miuicamera
+rm -rf vendor/xiaomi/onyx-miuicamera
 
-TG_BOT_TOKEN="8804773566:AAFJ2_ORCBLh-hES_2T5AvpQIdZ4QGoutp4"
-TG_CHAT_ID="-1003799985450"
+# Remove local manifests
+rm -rf .repo/local_manifests/
 
-export WITH_GMS=true
+# ROM source repo
+repo init --depth=1 -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs
+echo "=================="
+echo "Repo init success"
+echo "=================="
 
-set -e
+# Clone local_manifests repository
+git clone -b Lunaris-16-oss https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+echo "============================"
+echo "Local manifest clone success"
+echo "============================"
 
-# ------------------------------------------------------------
-# Clean old trees
-# ------------------------------------------------------------
-
-rm -rf \
-device/xiaomi/onyx \
-vendor/xiaomi/onyx \
-kernel/xiaomi/sm8735 \
-kernel/xiaomi/sm8735-modules \
-kernel/xiaomi/sm8735-devicetrees \
-hardware/xiaomi \
-packages/apps/LunarisDolby \
-packages/apps/GameBar \
-packages/apps/NotGameTurbo \
-device/xiaomi/onyx-miuicamera \
-vendor/xiaomi/onyx-miuicamera
-
-# ------------------------------------------------------------
-# Repo init
-# ------------------------------------------------------------
-
-repo init \
-    --depth=1 \
-    -u https://github.com/Lunaris-AOSP/android \
-    -b "$BRANCH" \
-    --git-lfs
-
-# ------------------------------------------------------------
-# Local manifests
-# ------------------------------------------------------------
-
-rm -rf .repo/local_manifests
-
-git clone \
-    -b "$MANIFEST_BRANCH" \
-    https://github.com/Sachinpawar86/local_manifests \
-    .repo/local_manifests
-
-# ------------------------------------------------------------
-# Sync source
-# ------------------------------------------------------------
-
+# Sync the repositories
 /opt/crave/resync.sh
+echo "============================"
 
-# ------------------------------------------------------------
-# Bionic patch
-# ------------------------------------------------------------
-
+# Bionic
 cd bionic
+curl -L https://github.com/sp-projectss/bionic/commit/8c732ec79000384e52de0efa656f50084f8403d0.patch | git am
 
-curl -L --fail --silent --show-error "$BIONIC_PATCH" | git apply --check
-curl -L --fail --silent --show-error "$BIONIC_PATCH" | git am
+# Export
+export WITH_GMS=true
+echo "======= Export Done ======"
 
-cd ..
-
-# ------------------------------------------------------------
-# Build
-# ------------------------------------------------------------
-
+# Set up build environment
 source build/envsetup.sh
+echo "====== Envsetup Done ======="
 
-lunch "$BUILD_TARGET"
+# Lunch
+lunch lineage_onyx-bp4a-user
+echo "============="
 
+# Make clean install
 make installclean
+echo "============="
 
+# Build ROM
 m bacon
-
-# ------------------------------------------------------------
-# Locate ROM
-# ------------------------------------------------------------
-
-OUT_DIR="out/target/product/$DEVICE"
-
-ROM_ZIP=$(find "$OUT_DIR" \
-    -maxdepth 1 \
-    -type f \
-    -name "Lunaris-AOSP-onyx-*.zip" \
-    -printf "%T@ %p\n" |
-    sort -nr |
-    head -n1 |
-    cut -d' ' -f2-)
-
-if [ -z "$ROM_ZIP" ]; then
-    echo "ERROR: ROM ZIP not found!"
-    exit 1
-fi
-
-ROM_FILE=$(basename "$ROM_ZIP")
-
-# ------------------------------------------------------------
-# OTA JSON
-# ------------------------------------------------------------
-
-JSON_PATH="$OUT_DIR/$JSON_FILE"
-
-if [ ! -f "$JSON_PATH" ]; then
-    echo "ERROR: $JSON_FILE not found!"
-    exit 1
-fi
-
-# ------------------------------------------------------------
-# SHA256
-# ------------------------------------------------------------
-
-cd "$OUT_DIR"
-
-SHA_FILE="${ROM_FILE}.sha256sum"
-
-sha256sum "$ROM_FILE" > "$SHA_FILE"
-
-cd ../../../../
-
-# ------------------------------------------------------------
-# GoFile + Telegram
-# ------------------------------------------------------------
-
-UPLOAD_TMP="/tmp/gofile_tg_upload.sh"
-
-curl -L --fail --silent --show-error \
-    "$UPLOAD_SCRIPT" \
-    -o "$UPLOAD_TMP"
-
-chmod +x "$UPLOAD_TMP"
-
-printf '%s\n%s\n%s\n%s\n' \
-    "$ROM_FILE" \
-    "$JSON_FILE" \
-    "$TG_BOT_TOKEN" \
-    "$TG_CHAT_ID" |
-    bash "$UPLOAD_TMP"
-
-rm -f "$UPLOAD_TMP"
-
-echo
-echo "=========================================="
-echo " LUNARIS-AOSP BUILD SUCCESSFUL"
-echo "=========================================="
-echo "ROM  : $ROM_FILE"
-echo "JSON : $JSON_FILE"
-echo "SHA  : $SHA_FILE"
-echo "=========================================="
-```
+echo "============="
