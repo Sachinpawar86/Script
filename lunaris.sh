@@ -42,7 +42,7 @@ curl -L https://github.com/sp-projectss/bionic/commit/8c732ec79000384e52de0efa65
 cd ..
 
 # Export
-export WITH_GMS=true
+export WITH_GMS=false
 echo "======= Export Done ======"
 
 # Set up build environment
