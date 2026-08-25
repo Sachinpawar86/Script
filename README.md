@@ -2,5 +2,5 @@
 
 # LunarisAOSP Command:
 ```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/oss/lunaris.sh | bash"
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Sachinpawar86/Script/refs/heads/OSS/lunaris.sh | bash"
 ```
