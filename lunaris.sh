@@ -3,9 +3,9 @@
 # Remove Xiaomi device/vendor/kernel trees for onyx
 rm -rf device/xiaomi/onyx
 rm -rf vendor/xiaomi/onyx
-rm -rf kernel/xiaomi/sm8735
-rm -rf kernel/xiaomi/sm8735-modules
-rm -rf kernel/xiaomi/sm8735-devicetrees
+rm -rf kernel/xiaomi/onyx
+rm -rf kernel/xiaomi/onyx-modules
+rm -rf kernel/xiaomi/onyx-devicetrees
 
 # Remove Xiaomi hardware folder
 rm -rf hardware/xiaomi
@@ -27,7 +27,7 @@ echo "Repo init success"
 echo "=================="
 
 # Clone local_manifests repository
-git clone -b Lunaris-16-oss https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
+git clone -b Lunaris-16-OSS https://github.com/Sachinpawar86/local_manifests .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
