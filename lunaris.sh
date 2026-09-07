@@ -36,6 +36,10 @@ echo "============================"
 /opt/crave/resync.sh
 echo "============================"
 
+# Bionic
+cd bionic
+curl -L https://github.com/Sachinpawar86/bionic/commit/af180de003807047d69b7c10a83ff05891b71ed3.patch | git am
+
 # Export
 export WITH_GMS=true
 echo "======= Export Done ======"
