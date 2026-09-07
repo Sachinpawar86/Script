@@ -39,6 +39,7 @@ echo "============================"
 # Bionic
 cd bionic
 curl -L https://github.com/Sachinpawar86/bionic/commit/af180de003807047d69b7c10a83ff05891b71ed3.patch | git am
+cd ..
 
 # Export
 export WITH_GMS=true
